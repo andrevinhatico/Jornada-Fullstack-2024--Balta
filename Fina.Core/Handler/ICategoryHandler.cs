@@ -1,4 +1,4 @@
-﻿using Fina.Core.Models;
+﻿ using Fina.Core.Models;
 using Fina.Core.Requests.Categories;
 using Fina.Core.Responses;
 using System;
@@ -15,7 +15,7 @@ namespace Fina.Core.Handler
         Task<Response<Category?>> UpdateAsync(UpdateCategoryRequest request);
         Task<Response<Category?>> DeleteAsync(DeleteCategoryRequest request);
         Task<Response<Category?>> GetByIdAsync(GetCategoryByIdRequest request);
-        Task<PagedResponse<List<Category?>>> GetAllAsync(GetCategoryByIdRequest request);
+        Task<PagedResponse<List<Category?>>> GetAllAsync(GetAllCategoriesRequest request);
 
     }
 }

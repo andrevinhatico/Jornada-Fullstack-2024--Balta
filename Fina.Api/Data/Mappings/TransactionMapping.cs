@@ -28,7 +28,7 @@ namespace Fina.Api.Data.Mappings
             builder.Property(t => t.CreatedAt)
            .IsRequired(true); //datetime2
 
-            builder.Property(t => t.PaidOrReceiveAt)
+            builder.Property(t => t.PaidOrReceivedAt)
            .IsRequired(false); //datetime2
 
             builder.Property(t => t.UserId)

@@ -34,7 +34,7 @@ namespace Fina.Api.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(type: "NVARCHAR(80)", maxLength: 80, nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    PaidOrReceiveAt = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    PaidOrReceivedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
                     Type = table.Column<short>(type: "SMALLINT", nullable: false),
                     Amount = table.Column<decimal>(type: "MONEY", nullable: false),
                     CategoryId = table.Column<long>(type: "bigint", nullable: false),

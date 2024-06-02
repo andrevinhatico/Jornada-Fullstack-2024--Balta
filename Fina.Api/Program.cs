@@ -1,20 +1,24 @@
+using Fina.Api.Common.Api;
+using Fina.Api;
 using Fina.Api.Data;
+using Fina.Api.Endpoints;
+using Fina.Api.Handlers;
+using Fina.Core.Handler;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Cryptography.X509Certificates;
 
 var builder = WebApplication.CreateBuilder(args);
-
-const string connectionString =
-     "Server=localhost\\SQLEXPRESS; database=fina; trusted_connection=true; trustservercertificate=true";
-
-builder.Services.AddDbContext<AppDbContext>(
-    x => x.UseSqlServer(connectionString)
-    );
-
-
+builder.AddConfiguration();
+builder.AddDataContexts();
+builder.AddCrossOrigin();
+builder.AddDocumentation();
+builder.AddServices();
 
 var app = builder.Build();
+if (app.Environment.IsDevelopment())
+    app.ConfigureDevEnvironment();
 
-app.MapGet("/", () => "Hello World!");
+app.UseCors(ApiConfiguration.CorsPolicyName);
+app.MapEndpoints();
 
 app.Run();

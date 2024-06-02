@@ -66,7 +66,7 @@ namespace Fina.Api.Data.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime?>("PaidOrReceiveAt")
+                    b.Property<DateTime?>("PaidOrReceivedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Title")

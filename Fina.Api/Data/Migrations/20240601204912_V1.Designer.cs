@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Fina.Api.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240530134057_V1")]
+    [Migration("20240601204912_V1")]
     partial class V1
     {
         /// <inheritdoc />
@@ -69,7 +69,7 @@ namespace Fina.Api.Data.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime?>("PaidOrReceiveAt")
+                    b.Property<DateTime?>("PaidOrReceivedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Title")
